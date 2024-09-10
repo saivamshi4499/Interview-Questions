@@ -1,0 +1,537 @@
+In python a = MSG_REG. How make it all in lower case ? - with an without shortcut
+What is scan and functional coverage ? 96% scan coverage and 50% functional coverage will give 98% total coverage. How ?
+Explain what is a dictioonary in python with examples.
+In system verilog, write constraints to create a random array of integers such that array size is bwt 7~16 and the values of the array are in descending order?
+In system verilog, write a constraint to generate an array with all unique elements. - use unique and forach loop
+in system verilog, Write a constraint such that a is inside 10,15,20,25 using logical operators.
+in system verilog, Constraint an array such that each element of the array is less than 20
+system verilog code to generate a clock with 50 mhz.
+always clk = #5ns clk; Modify this to be a 25% duty cycle.
+python code for bubble sort
+system verilog random one hot function generation using constarints
+1kb mem - each line is 1byte. Write testbench code to verify it.
+verilog syntax to delay 1 clk pulse
+string to binary in python
+a = "11", how to convert this into a binary number ?
+in uvm driver can I write to scoreboard after calling item_done ?
+i have a clk with time period 100mhz. Its duty cycle is 25%. What will be the timeperiod wif the clk is divided by 3 ?
+give me a sv code to implement a clock divider by 3
+
+"
+reg [3:0] count, dout;
+bit clk;
+count = 0; dout = 0
+always @ posedge clk => count = count + 1
+always @ negedge clk => dout = count
+
+assign div3 = count[0] || dout[0]
+assign div5 = count[1] || dout[1]
+
+This is an system verilog code. With this code, if clk is 100 mhz, then what is the frequency of div3 and div 5 ?
+"
+
+modify the above code to achieve 33.3 Mhz on div3 and 20 mhz on div5.
+
+vdd is 1v in cmos transistor. what is on pmos or nmos
+if vin is 1, what is  vout
+if vin is .5 ?
+
+If verbosity in uvm is UVM_HIGH, what all levels will be printed ?
+In system verilog difference between latch and reg
+Advantage of register over latch ?
+In. Sequential block , why do we need clock.
+Difference between struct and class?
+What is virtual keyword?
+Pure virtual function?
+In a 3 byte memory, there 3 failing bits, the failures are random. What is the probability that 1 at byte has no failures.
+What is the probability that 1st bit has a failure.
+What is the probability that each byte has 1 failing bit. 
+Give me a code to design Fibonacci number in sv and python. - with and without recursion. Is it synthesizable.
+Why we use logic instead of reg ?
+
+Scenarios of unwanted latches in digital design
+Differance between always * and always comb.
+What is assume wrt simulation. 
+Differance between assert and assume.
+What is differed assertion. 
+Simulation regions. ?
+Explain all the state transitions in a moesi cache coherency diagram.
+In system verilog, in a multiplexer if a is 0 and b is 1, s is 0, what is output
+What does a non blocking statement look in a. Real circuit. 
+Python code to remove duplicates in an array with 1 loop. - with and without using in
+What is tuple?
+I have an array with duplicate items. Use dictionary to remove them. 
+In python, use the given array of numbers to create the largest possible number from the combination of all the single digits. Array is [10, 3, 59, 8,6]
+
+In C, write a code to convert a char into binary decimal and hexadecimal. 
+Virtual sequence in uvm. Why is it used. 
+What is uvm config db ?
+In general coding, what are the best practices. 
+In system vedi log, code the function to fill the array of size h, print the array element of index x. Fill the array with n-1, n-2.,.,.,0. 
+In system verilog, declare a dynamic array.
+In the above question code, write a function to fill more m elements in the arr after declaring it as a dynamic areay. 
+When new size is given to a dynamic array, what happens to the new array.
+Types of arrays in system verilog.
+How are queues different than dynamic array.
+Will queue help to retain the elements when resized ?
+What is the maximum bound of a queue ?
+Where are queues allocated memory in cpu ?
+In system verilog, there is a single task being called by 4 threads in a fork join. The task has a default arguments. Each call to the task has an override arguments. How to make sure there are called multiple times parallely. 
+What will automatic do ?
+In system verilog, write a constraint to that outputs unique integer on each randomization. 
+When randomize is called 10 times, how to print unique elements each times.
+Can you use Rand on integer ?
+How to compare the new randomized value with queue.
+Soft constraint ?
+How to override soft cosntraint.
+In uvm why do we have virtual interface. 
+Why do we call it as virtual interface. 
+Where do you connect interface signals with rtl ?
+Uvm modports ?
+What all are present in the body of the interface in uvm.
+Clocking block. ?
+What happens if we don’t have a clocking block. 
+Automatic in sv ?
+Clock gating and dynamic clock gating in vlsi
+There is a small rtl module named module A is currently running off of one PLL clock source. It does not have clock gating. If I want to add dynamic clock gating and also do all of its functions, what are the functions that I need to add ?
+Power gating is added to module a which is on voltage rail 1. Module b is on a different power rail. How to communicate between the two modules. 
+In digital design, what is clock glitches.
+In a given module to gate a clock, if enable is 0, don’t propagate the clock and if enable is 1, then propagate the clock. The duty cycle of the clk is 20. If there is a glitch, how can that be resolved.
+In system veiling assertions, write a property in which you check at posedge of clk if there is an req or not. If req is active, within 3 cycles ack should be active. Then increment the ack counter by 1.
+if the req is active, then within 1 or 3 cycles, ack should be active.
+Give me an assertion for the ack increment.
+a ##1 b implies c. Explain this property. 
+How to fix a vacuous true assertion. 
+How to modify the assertion, to make sure req is asserted at least once. 
+What is a buffer in verilog. 
+What is uwire in verilog. 
+In the buffer code, if I have assign in = out. What will happen.??
+
+In system verilog, is the below code sysnthesizable ?
+
+always_ff @ posedge clk
+For ( int i = 0, I < 32; I ++)
+If (en && (I==addr)
+Mem[i] = data_in
+End
+
+In system verilog,
+
+Always_latch begin
+If(~clk)
+Q <= (rst) ? 0 : ((en) ? D:q);
+End
+
+Is this sysnthesizable.??
+
+If not if reset, we check for enable, if enable is asserted, we assign q to d. else the feedback of q is assigned to q. Why is this bad ??
+When will we use priority and unique case. 
+In unique case, what is it asserting ??
+What if default is not present in unique.?? What else does priority case say ??
+
+How is asic flow different from fpga flow.
+Mealy is advantage over moore. What are they??
+What is the disadvantage of mealy over moore ??
+For conbinational why do we use blocking statements. 
+System veeilog assertion for write and read shouldn’t be high at same time. 
+Types of implication operators.
+
+What are the multiple ways to implement content addresable memory ?
+Cache Design:
+
+Assume we have a cache described as follows: 8 byte total cache size
+2 byte block size
+2-way set associative cache 16-bit addresses
+
+How many bits for Tag?
+
+Would this SV code, catch 'X' related issues? If ( my_signal == 'X', assert ("Saw X in my_signal")?
+What would be the CPI for a 2-way superscalar in order pipeline in an ideal world with no stalls?
+
+how many ways to get a positive integer x by adding 1's and 2's ?
+Write a function to an integer as an input and output each digit of the integer separately. Do it without converting to string. Divide by 10 and store the remainder. Write the same function in python and SV.
+In a cache, cache size is 1mb. 4 way associative. What is the tag and index. Cache line size is 1 byte.
+
+Why do we need owned state in cache coherency??
+Program to check if a given string is palindrome or not. - in python and SV
+Design a rising edge detector using d flip flops in system verilog
+In a d flip flop, q is 0 at time 5. There is a posedge clk at time 5,15,25 and so on. D is initially 1 from time 0. D is given a value of 0 at time 5. What is the value of q at time 5, time 15 and time 25 ?
+if d goes to 1 at time 25. How does things change ?
+
+There are n elements are in the array. Find the largest differance between two elements in the array. Write the code in cpp.
+
+A 2x2 port packet switch has following specifications:
+Specification: There are two input and output ports A and B as shown above.
+Each port can receive packets of variable size between 64 and 1518 bytes. Each
+packet will have a 4 Byte Source Address and 4 Byte destination address along
+with data and a 4 Byte CRC computed across packet as shown below. The packet
+will be switched to one of the output port based on Destination Address.
+Write a stimulus generator code in system. Define these in a class and call .randomise().
+
+in MIPS 5 stage pipeline architecture, explain data forwarding. Clearly mentioned from what stage to what stage thee data must be forwarded and what ahazards it is used to overcome.
+I have a i2c susbystem that consists of a i2c master controller and i2c slave controller. The data is sent from master controller to slave controller bit by bit. Give a code to data generation.
+Write a test case to send the 32 bit data bit by bit in system verilog.
+
+Truth table of 1 bit full adder.
+difference between wire reg and logic in system verilog.
+Difference between blocking and non blocking assignments. 
+Model a. Sync reset and async reset.
+Difference between function and task in sv.
+What is virtual interface. How is it used in sv test bench. 
+System verilog inheritance ? How to override parent class functions??
+Immediate and concurrent assertion ?
+Input and output delays in a design ?
+what is multi cycle path in design??
+Clock generation logic. 
+Clock divider logic. 
+Clocking blocks in sv.
+I have a capacitor. Its charge is 1 columb and capacitance is 1 f. What is the voltage ??
+if 2 capacitors in parallel, what happens to voltage??
+how will voltage increase when 2 capacitors are in parallel ??
+when 2 capacitors in series, what will happen to. Voltage ??
+why do we use exclusive state in mesi cachec coherency protocol ?
+In system verilog, implement a right shift register.
+Suppose d is 1010. Explain in details how it will right shoft by 1 ?
+If I want to right shift by 2, what should I do ?
+Reverse bits of a given 32 bits unsigned integer. in python
+Write a function that takes the binary representation of a positive integer and returns the number of set bits it has (also known as the Hamming weight).
+Given an array nums of size n, return the majority element.
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+Design a module in system verilog that takes 1 byte input stream and convert it to a a 32b output stream. The valid bit should be set at output after a 32b is received. Input is 1 byte and output is 32 bytes. Add valid bit on the input side as well. It can be 1 or 0.
+Will be able to output 32bytes in the output ?
+What are some debug information that can be captured in this module, with respect to errors If anything is found in silicon??
+What performance parameters can be considered ??
+How can a performance be captured in silicon for over an hour??
+How big will the performance counters be??
+What are disadvantages to remove some bits from counter ??
+If the range is reduced, what actions can be taken ??
+fwc full form in emulation vlsi
+Differance between asic and fpga. Also, provide the answer in relation to Emulation.
+differance between architecture and micro architecture in vlsi 
+PLL in vlsi ?
+What is a phase in clock?
+What system verilog constructs are synthesiable and non-synthesizable ?
+SV code to generate clk of 100 mhz with 25% duty cycle.
+system verilog code to implement clock divider.
+clock divider by 2 code in system verilog. 
+
+Explain the block diagram and a tb for the verification of ahb-apb bridge with VIP driving the inputs. 
+In cpp, what are the stl elements..??
+Differance between map and vector in all cpp
+In cpp, what is inheritance? Example of base and derived class in cpp.
+In system verilog, what is the difference between $finish and #100 $finish ?
+In c, what is a leak??
+How to fix memory leak ??
+When running and I see a core dump, how would I debug ?? Examples of a core dump ??
+Invalid pointer example ??
+In a million lines of code, how to improve the run time performance ??
+How to write a profiler to identify the bottlenecks ??
+If multiple runs have different behavior, what are the possibilities??
+
+Below is the code,
+In count_chars(char *s, char find_me)
+{}
+Implement this function. For hello world string, and chat as l, the answer should be 3.
+
+Function to count the number of set bits in the numbers. 
+Code:
+Int count_set_bit(unsigned in N)
+{}
+Fill this function, to get the output as 1 for 0000001000.
+
+What does the below do??
+While(n)
+Count ++;
+N = n & (n-1)
+Return count
+
+In SV, differance between wire , reg and logic ?
+Ahb apb bridge signals. How is the ready signal used ?? P valid ?
+If I want to read function, what elements are required ?? What are the return values ?
+Integer and struct data type ?
+How would the above read function differ in both these case. 
+How will this integer and struct affect the apb bus ?
+Give an example of struct in apb bus. 
+How would the receiver logic look like to determine the size of the register in case of a struct ?
+The 128 bit register, the data is larger than bus width, how will this be handled ?
+MMU ?
+How does the data structure of the mmu look like ?
+What happens when virtual address has no physical mapping ??
+How to resolve page fault ?
+Why do we use caches ?
+Describe the difference between cycle based and event based simulator?
+Case(1’b1) . What does this do in verilog?
+
+What is the difference in structural and behavioral approach. In verilog ?
+What will produce a structural netlist ?
+Write a behavior verilog code for an oscillating clock with 50% duty cycle. 
+Write code for generation of clock .
+Verilog code for synchronous reset diff. 
+There are 3 d flip flops. Output of first one is the input of second one and so on. Write verilog code for that. Draw the timing diagram for this. 
+In the above code, if q=d uses all blocking instead of non blocking ??
+When do we use blocking and non blocking assignments ??
+What happens if 
+Q3=q2
+Q2=q1
+Q1=d
+There are 3 states in an fsm. Idle, s1 and s2. Write a state diagram.
+
+
+In vlsi, you are asked to verify a boot sequence of an Soc that has been modeled for an emulator. This processor has some fairly rudimentary security measures in place. In order for it to start fetching code and executing it needs to receive a pulse from a GO signal. That is sent from a boot module also located in the Soc. The boot module needs to receive the byte value from 0x60, from a decipher module in order for it to send the go signal. 
+The decipher module is a 3rd party module whose code is black boxed, it takes 32-but password sent in a byte at a time over three line serial bus. 
+The specs are as below:
+The thre slimes in that serial bus are: a clock line, a data line, and transfer line.
+The transfer line is asserted at the beginning of the each byte.
+Each byte is transferred least significant bit first.
+The bytes are transferred starting with the most significant byte. 
+The switches also located on the motherboard starts yransfwrring the password once a per button is pushed. 
+The bus master is a switch reader chip ok the motherboard and get the password.  If a password 737664DE is passed, it will send out a 0x60 to your module and therefore your processor will boot. How to go about verifying this ??
+
+What all different passwords can be tested here ?
+If password is 12345678, the output is x83. For my initial password, the output expected is x60, but I don’t get the desired output. I can’t look into the module logic. How to validate this ?
+When I give password as 737664DE, the values transmitted to the input of the module is 219B898C. Is there a pattern in the errrnous transmission. How to find it and resolve it ??
+What specific values can you try as an input to find the error ??
+
+In system verilog, why do we need constraints ?
+
+Class prand ;
+Rand bit (7:0) x,y,z;
+Rand bit r;
+Endclass.
+Write constraint for x>10 and less than 20.
+
+Constraint for if y is 0, between 20-35 or between 40-50.
+constraint for z lies between 0 and 5 when r is 1 and in between 0 and 10 when r is 0.
+Create a module, with an instance for prand p. How will you randomize the clas??
+
+In system verilog, write an assertion for if full goes high, at posedge of clock and do not evaluate if reset is high.
+Assertion for is b goes high after 10 cycles of clock after data becomes x24 and o not evaluate if reset. Do this using implication operator.
+Assertion for if 8 bits out of 16 bits in signal are set ?
+
+Create a memory module with single read write port with read and write enables. It encapsulates  memory and dine the port bits accordingly for a synchronous memory. It has reset and clk. Take separate address for write and read. 
+Memory is 16mb and each entry is 1 byte. 
+What is the depth of the memory??
+This is a single port ram. How to execute in one if statement ?
+
+Tell about caches importance ? Different kind of placement policy in cache ?
+Based on the 16mb memory, if a cache is to be designed 4 way set associative, how many sets we need ??
+For 1 mb memory, how many sets ?? Cache size is 1 mb. What if block size is 4kb ?
+How will the 64 sets be divided into tag and offset index ?
+
+Create a verilog code, there is. Swipe machine at the building. Each swipe will generate a pulse that stays high for 500ns and then goes down. There is a clock that runs at 1mhz. How many people entered the building ?? Each person swipes only once. Posedge of pulse is same as possessed of clk. 
+Does the frequency of clock matter to the logic ??
+The pulse is lost at the possessed. The pulse reg is always 0 at each possessed. 
+Pulse in this logic is always latched to 0. Modify the code as in this at each posedge, the pulse is latched to 0.
+take at always @ negedge.. how the logic will change ??
+What will happen if the pulses come back to. Back ?? 
+
+Reg a, b,c
+Always@(*)
+C = a&b
+What is the synthesis logic ??
+
+In the same logic, if a, c = b else c = 0. What is the synthesis logic ??
+As c is 0 in else can we reduce the mux  logic ??
+If a , c =b, what is the synthesis??
+If a is asserted, c is equal to b. What is the synthesis code ??
+Can I do it with and gate ??
+Always @ posedge a,
+C=b  what is the synthesis for this ??
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one. Give program in python
+what is 0 xor a ?
+In python, implement the bubble sort also on an input array of size n. If the input array is 5,1,4,2,8 ?
+
+In python, write a function that provides a psuedo random output selected from an input string. The input is provided as a string of parameters in the format:
+Pa, [Pb,..]
+Where each p is a string. Parse the string and provide a psuedo random value back. 
+For example:
+Input is:
+apple, orange
+Should, on average, return ‘apple’ ~50% and orange ~50%.
+
+What is the way to confirm if the distribution is 50% ?
+
+In the above question, if it as below:
+apple@2, orange@1
+Then it should take as apple twice and orange 1. The distribution should be apple is 66% and orange is 33%.
+If input is a below:
+apple@3, orange@2, grape@1,
+Then output should be apple at 50%, otange@33%, grape@16%.
+
+What stage do ALU instructions don't have an impact or compute in an in-order pipeline?
+Can you build a working CPU without virtual memory?
+
+What is the primary reason for switching from in-order to out of order processor design?
+
+Improve throughput 
+Reduce power consumption 
+Exploit instruction level parallelism 
+Exploit thread level parallelism
+
+Consider this assembly instruction:
+Dest Src0 Src1
+ADD R0 R1 R2
+SUB R0 R4 R5
+MULT R6 R0 R1
+What order of data hazards are observed above? 
+WAW, RAW 
+RAW, WAR 
+RAR, WAW
+
+Assume we have a cache described as follows: 8 byte total cache size
+2 byte block size
+2-way set associative cache 16-bit addresses
+
+How many bits for Tag?
+How many bits for Set Index?
+How many bits for Block Offset?
+
+Would this SV code, catch 'X' related issues? If ( my_signal == 'X', assert ("Saw X in my_signal")?
+What would be the CPI for a 2-way superscalar in order pipeline in an ideal world with no stalls?
+
+Difference between blocking and non blocking statements in verilog. 
+Differance between wire and reg.
+Combinational and sequential logic difference.
+What is synchronous and sequential logic ?
+What are fsm?
+Fsm for 2bit counter 
+
+What are caches ??
+Differance between fully associative and direct mapped cache ??
+What is setup and hold time ??
+Difference and dynamic and static power in cmos ?
+Formula to calculate dynamic power ??
+
+In cpp, difference between class and object ??
+4 pillars of oops in cpp.
+Why is cpp advantages than c in terms of encapsulation??
+Difference between public private protected specifier??
+Abstract class ??
+Differance between class and abstract class ?
+Differance between thread and process ?
+System calls ?
+DMA ?
+Interrupts ?
+
+
+GPU pipeline ??
+What is simd gpu ?
+On cpu, what do you use on simd instructions ?
+What kind of simd instructions are there ?
+On GPU what is wavefront ?
+On if else works on wavefront ?
+How is cpu if else different from gpu if else ?
+Opencl ?
+Quda programming language ?
+What is block in cuda programming ?
+On gpu, which part I am interested in ?
+Gpu pipeline ?
+What are vector instruction ?
+Override in cpp ?
+How to call a c function from cpp ?
+How does extern works ?
+When you compile the cpp code, the errors will be given in which stage ? Compile or link state ?
+How to make a class non copyable in cpp ?
+On system verilog, what is 2’s complement ?
+
+In cpp, write a code for rectangle class with width and height as variables. Area as data function. Set parameter as member function.
+Modify the class such that we want to create a parent class polygon and inherit the rectangle class from polygon class and make the area function as an abstract function. Give me full code. 
+Cpp function for binary search. Input is a sorted array and a number to search in the array.
+
+In system verilog, differences between tasks and functions ?
+Types of array in sv.
+In a 32bit number, rtl code to count the number of ones.
+In sv, there is an input data of 8 bits at 100mhz freq. FIFO read is happening at 4bit at 50mhz freq. at any time, maximum 100 bytes of data will come. What is the minimum fifo depth required ??
+How much is the minimum depth of fifo. It comes at 8bits at a time and the read happens 4 bits at a time. 
+
+In system verilog, write an assertion to check when req is asserted, ack should be followed. There is no time limit. Also make sure that req should be asserted as long as ack is not asserted. 
+
+Write a constraint for a pll as per following specs.
+Reference clock and division ratio. Ref clock range is 10 to 100 mhz. Ratio is an 8 bit number. Output clock = ref clock * division ratio.
+Output frequency should be between 100mhz to 5ghz. If I cannot constraint the output what should I do ?
+
+In a class, Rand int a, b. Int c. When randomize(c) is called what all get randomized ?
+Difference between code and functional coverage .
+Ignore and illegals bins ?
+Cross coverage ?
+In uvm, what is c_sequenxer ?
+p_sequenxer ?
+What are active and passive agents in uvm ?
+In uvm, why is connect phase bottom up ?
+Difference between virtual sequencer and sequencer?
+Difference between uvm create and system verilig new function ?
+In uvm, how to make sure the code is reused as much as possible from subsystem to soc ?
+
+In python, write a pseudo code to prompt the user for a number n to print a pyramid of x’s to the screen with height n. 
+Modify the code to give 1x in 1st line, 2x in 2nd line, 3x in 3rd line and so on. 
+In python, write a code that reads input from a file or the keyboard and prints all the words, 1 per line. 
+
+Python code to print the account and account owner(first.[mi.]last) from GECOS fields of all faceless (NOTAPRSN) account declarations found in the password file. 
+Python code to parse the file and print the output. 
+How to get the same result using unix commands ? 
+How to use the grep command to print the account and account number from the string? - Use stream editor instead of awk ?
+
+Implement A nand gate using mux.
+Implement the nor gate using 2:1 mux in python ?
+Where are muxes used ? 
+
+I have 8 identical bricks. One of the brick is slightly heavier than the other 7. I have a weight balance. Sort the heaviest brick out of 8 using least number of tries.
+If the grouping is correct, is there a more efficient way ?
+
+I have 3 vending machines. 1 vending machine has chocolate1, second vending machine has choclate2 and third vending machine has chocolate1 and chocolate2. Least number of tries to label them as what chocolate belongs to what machine ?
+How to label all three chocolates correctly with 1 try ?
+The vending machines are incorrectly. How to identify ?
+If I can draw only 1 chocolate at a time, how to get the answer in 1 try ?
+
+ATE in vlsi ?
+In system verilog, design a half adder .
+Design a full adder with a 2:1 mux.
+Gate level design for full adder using 2:1 mux.
+Design a circuit to detect the number of ones in a binary number .
+If I have a large binary number, give me the circuit diagram . Give me a rtl code for this. Use the xor and and gates to design this circuit. Give the rtl code and diagram. What’s the answer for input 1011001 ?
+
+Inter statement delay and intra statement delay exampleZ
+Types of delays.
+Draw a waveform to represent internment and intra statement delay.
+Fsm to detect a pattern 1010.
+Design a clock divider by 2.
+Ring oscillator ?
+How to increase freq of ring oscillator ?
+Circuit of an inverter.
+Types of delays in the inverter.
+What kind of delay can be there between multiple inverters.
+Ring oscillator diagram.
+Interconnects?
+ interconnect delay??
+What happens when width is increased ?
+
+Difference between a flip flops and latch ?
+What is metastability ?
+Setup time and hold time ?
+Violation setup time ?
+There is a timing path between two flip flops. How to fix a setup time violation ?
+Hold time violations ?
+There are two flip flops. What can be done with clock nets to solve setup time violations ?. 
+How does clock skew help in setup timing violation ?
+Is clock skew good or bad ?
+Why we need clock gating ?
+In digital circuits what are the different components of power ?
+Design a 2 input nand gate using cmos
+3 input nor gate using cmos
+What is a mux?
+What is timing slack ?
+
+I have a design and the worst path of the design is a negative slack. The design is running at 1ghz which is 10am time period.  The design is missing the timing by 100ps. What is the maximum frequency that the design can run at without violating the setup or by making the slack 0.
+
+
+
+
+
+
+
+
+
+
+
+
