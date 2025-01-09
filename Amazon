@@ -1,0 +1,61 @@
+Amazon interview question:
+
+Write a monitor for this design output interface
+
+
+* Everything is driven on Posedge of clock, Valid signal is qualifier for all rest of the signals
+* SOP is start of packet, when new packet starts SOP stays high for one clock cycle
+* EOP is end of packet, When packet ends EOP stays high for one clock
+* pkt_length indicates packet length in no. of bytes. and it is valid at EOP only. For example, pkt_length = 37, total packet size is 37 bytes
+* No new packet can be start for same pkt_id until EOP has come that means SOP can come before EOP for different pkt_id
+* Data is valid from SOP to EOP including them. There can be idle cycles in between. 
+
+
+class mon_pkt extends uvm_monitor #(mon_analysis_pkt)
+    
+    `uvm_component_utils("mon_pkt")
+    
+    mon_nanalysis_port mon_analysis_pkt;
+    
+    function new(string name"mon_pkt", uvm_component parent) begin
+        super.new("mon_pkt")
+    
+    data_pkt dpt
+    //declare an virtual interface
+    
+    virtual function build_phase(uvm_phase phase) begin
+        data_packet dpt::typeid::create
+    SOP
+    EOP
+    pkt_length[15:0]
+    clk, valid, data[31:0]
+    
+    vif.data, vif.SOP ...
+    dpt.data <= vif.data
+    
+    task mon_write() begin
+        int flag_sop = 0, flag_eop;
+        always @(posedge vif.clk) begin
+            if(valid) begin
+                if(flag_sop == 1 && vif.SOP) begin
+                    
+                    
+                end
+                if(vif.SOP) begin
+                    flag_sop = 1;
+                    pkt_id = vif.pkt_id
+                
+                if(flag_sop)
+                    dpt.data <= vif.data;
+                    //rest of the signals
+                if(vif.EOP && flag_sop == 1) begin
+                    dpt.pkt_length <= vif.pkt_length;
+                    flag_sop = 0;
+                //if(flag_sop == 1)
+            end
+        end
+    end
+    
+    write a constraint to make sure every even item in an array is even and every odd item is odd.
+    rand int num;
+    constraint c1 {foreach(nums[i] if(i%2==0) nums[i]%2==0 else if i%2==1 nums[i]%2==1);} 
